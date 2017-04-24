@@ -1,0 +1,15 @@
+<workflow-app name="sbt-oozie/sbt-test/baz/qux" xmlns="uri:oozie:workflow:0.5">
+  <start to="hello-world"/>
+  <action name="hello-world">
+    <shell xmlns="uri:oozie:shell-action:0.3">
+      <job-tracker>yarnRM</job-tracker>
+      <name-node>hdfs://nameservice01</name-node>
+      <exec>echo</exec>
+      <argument>Hello, World!</argument>
+      <capture-output/>
+    </shell>
+    <ok to="end"/>
+    <error to="end"/>
+  </action>
+  <end name="end"/>
+</workflow-app>

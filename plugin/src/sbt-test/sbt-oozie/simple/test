@@ -1,0 +1,6 @@
+> show oozieLocalApplicationNames
+> show oozieLocalApplicationByName foo
+> show oozieLocalApplicationByName bar
+> show oozieLocalApplicationByNameOrError bar
+> show oozieLocalApplicationByName baz/qux
+> show oozieLocalApplicationByName baz/quux

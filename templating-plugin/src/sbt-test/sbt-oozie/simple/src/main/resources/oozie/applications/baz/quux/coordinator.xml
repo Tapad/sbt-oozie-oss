@@ -1,0 +1,10 @@
+<coordinator-app timezone="UTC" frequency="${coord:months(12)}" end="${coord:conf('date.end')}" start="${coord:conf('date.start')}" name="sbt-oozie/sbt-test/baz/quux-daily" xmlns="uri:oozie:coordinator:0.4">
+  <controls>
+    <concurrency>1</concurrency>
+  </controls>
+  <action>
+    <workflow>
+      <app-path>${coord:conf('oozie.coord.application.path')}</app-path>
+    </workflow>
+  </action>
+</coordinator-app>
