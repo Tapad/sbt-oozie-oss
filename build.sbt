@@ -51,9 +51,12 @@ lazy val library = (project in file("library"))
   .settings(
     name := "oozie-lib",
     libraryDependencies ++= Seq(
-      "org.apache.oozie"   % "oozie-client" % "4.3.0" exclude ("org.slf4j", "slf4j-simple"),
-      "org.scalactic"     %% "scalactic"    % ScalacticVersion
-    )
+      "org.apache.oozie"  % "oozie-client" % "4.3.0" exclude ("org.slf4j", "slf4j-simple"),
+      "org.scalactic"    %% "scalactic"    % ScalacticVersion
+    ),
+    libraryDependencies := scalaXml(scalaVersion.value).fold(libraryDependencies.value) {
+      libraryDependencies.value :+ _
+    }
   )
 
 lazy val util = (project in file("util"))

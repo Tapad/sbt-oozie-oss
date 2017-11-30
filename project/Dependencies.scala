@@ -16,4 +16,11 @@ object Dependencies {
       case _ => Some("org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4")
     }
   }
+
+  def scalaXml(scalaVersion: String): Option[ModuleID] = {
+    CrossVersion.partialVersion(scalaVersion) match {
+      case Some((2, 10)) => None
+      case _ => Some("org.scala-lang.modules" %% "scala-xml" % "1.0.6")
+    }
+  }
 }
