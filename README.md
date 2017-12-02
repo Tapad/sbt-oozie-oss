@@ -25,7 +25,7 @@ An [sbt](http://scala-sbt.org) plugin for launching and scheduling [Oozie](http:
 Add the following line to `project/plugins.sbt`. See the [Using plugins](http://www.scala-sbt.org/release/docs/Using-Plugins.html) section of the sbt documentation for more information.
 
 ```
-addSbtPlugin("com.tapad.sbt" % "sbt-oozie" % "0.1.0-SNAPSHOT")
+addSbtPlugin("com.tapad.sbt" % "sbt-oozie" % "0.1.0")
 ```
 
 ## Usage
@@ -36,9 +36,9 @@ If the `OOZIE_URL` environment variable cannot be set, the Oozie server URL can 
 Remember to enable the `OoziePlugin` in your build definition, or if using a multi-project setup, on each subproject that you wish to integrate with Oozie.
 
 ```
-hadoopClasspath := hadoopClasspathFromExecutable.value // used by sbt-hadoop, see next README.md section
+hadoopClasspath := hadoopClasspathFromExecutable.value // used by sbt-hadoop, see next section of README.md
 
-oozieUrl := "http://my-oozie-server:11000/oozie" // only required if if OOZIE_URL is not set
+oozieUrl := "http://my-oozie-server:11000/oozie" // required iff OOZIE_URL env variable is not set
 
 enablePlugins(OoziePlugin)
 ```
@@ -124,9 +124,9 @@ NOTE: If using sbt 1.0.x, sbt-twirl requires that you use sbt version 1.0.1 or g
 
 Add the following lines to `project/plugins.sbt`.
 ```
-addSbtPlugin("com.tapad.sbt" % "sbt-oozie" % "0.1.0-SNAPSHOT")
+addSbtPlugin("com.tapad.sbt" % "sbt-oozie" % "0.1.0")
 
-addSbtPlugin("com.tapad.sbt" % "sbt-oozie-templating" % "0.1.0-SNAPSHOT")
+addSbtPlugin("com.tapad.sbt" % "sbt-oozie-templating" % "0.1.0")
 ```
 
 Also be sure to enable both the sbt-oozie and the sbt-oozie-templating plugins in your `build.sbt` file:
