@@ -33,6 +33,16 @@ By default, sbt-oozie assumes the `OOZIE_URL` environment variable is set and is
 
 If the `OOZIE_URL` environment variable cannot be set, the Oozie server URL can be provided to the `oozieUrl` setting key in your build definition.
 
+Remember to enable the `OoziePlugin` in your build definition, or if using a multi-project setup, on each subproject that you wish to integrate with Oozie.
+
+```
+hadoopClasspath := hadoopClasspathFromExecutable.value // used by sbt-hadoop, see next README.md section
+
+oozieUrl := "http://my-oozie-server:11000/oozie" // only required if if OOZIE_URL is not set
+
+enablePlugins(OoziePlugin)
+```
+
 ### Integration with sbt-hadoop
 sbt-oozie will transitively bring [sbt-hadoop](https://github.com/Tapad/sbt-hadoop-oss) into your project once enabled.
 
